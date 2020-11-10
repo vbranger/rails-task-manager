@@ -5,9 +5,7 @@
       <%= simple_form_for(@task) do |f| %>
         <%= f.input :title %>
         <%= f.input :details %>
-        <%= f.input :completed, as: :boolean, boolean_style: :inline do %>
-          <% f.check_box :completed, {}, "true", "false" %>
-        <% end %>
+        <%= f.input :completed, as: :boolean, boolean_style: :inline %>
         <%= f.submit class: "btn btn-primary" %>
       <% end %>
       <hr>
