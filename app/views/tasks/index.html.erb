@@ -1,12 +1,21 @@
-<h1>My tasks</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>My tasks</h1>
 
-<ul>
-  <% @tasks.each do |task| %>
-  <% if task.completed%>
-    <li><%= fa_icon "check-square" %> <%= link_to task.title, task_path(task) %></li>
-  <% else %>
-    <li><%= fa_icon "square" %> <%= link_to task.title, task_path(task) %></li>
-  <% end %>
-  
-  <% end %>
-</ul>
+      <ul>
+        <% @tasks.each do |task| %>
+          <% if task.completed %>
+            <li><%= fa_icon "check-square" %> <%= link_to task.title, task_path(task) %></li>
+          <% else %>
+            <li><%= fa_icon "square" %> <%= link_to task.title, task_path(task) %></li>
+          <% end %>
+        <% end %>
+      </ul>
+      <hr>
+      <%= link_to tasks_new_path do %>
+        <%= fa_icon "plus" %> Add a new task
+      <% end %>
+    </div>
+  </div>
+</div>
