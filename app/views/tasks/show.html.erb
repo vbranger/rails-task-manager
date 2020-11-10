@@ -1,7 +1,12 @@
-<div class="container">
+<div class="container my-3">
+  <div class="d-flex justify-content-between my-3">
+      <h2><%= @task.title %></h2>
+      <%= link_to edit_task_path(@task) do %>
+        <button type="button" class="btn btn-outline-secondary">Edit</button>
+      <% end %>
+  </div>
   <div class="row">
     <div class="col">
-      <h2><%= @task.title %></h2>
       <div class="alert alert-secondary" role="alert">
         <p><%= @task.details %></p>
       </div>

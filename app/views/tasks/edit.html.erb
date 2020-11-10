@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Edit task</h1>
+      <%= simple_form_for(@task) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :details %>
+        <%= f.input :completed, as: :boolean, boolean_style: :inline do %>
+          <% f.check_box :completed, {}, "true", "false" %>
+        <% end %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+      <hr>
+      <%= link_to tasks_path do %>
+        <%= fa_icon "undo" %> Back to list
+      <% end %>
+    </div>
+  </div>
+</div>
